@@ -1,0 +1,55 @@
+#!/bin/sh                                                                                                                                                                                                                             
+                                                                                                                                                                                                                                      
+   echo "Enter directory name "                                                                                                                                                                                                       
+                                                                                                                                                                                                                                      
+    read a                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                      
+   echo "Enter option create/delete"                                                                                                                                                                                                  
+                                                                                                                                                                                                                                      
+   read b                                                                                                                                                                                                                             
+         
+
+   if  [ $b == "create" -o $b == "delete" ] ; then                                                                                                                                                                                                                             
+                                                                                                                                                                                                                                      
+    if [ $b == 'create' ] ; then                                                                                                                                                                                                      
+                                                                                                                                                                                                                                      
+           if [ ! -d "$a" ] ; then                                                                                                                                                                                                    
+                                                                                                                                                                                                                                      
+                 mkdir "$a"                                                                                                                                                                                                           
+                                                                                                                                                                                                                                      
+                 echo "Created directory $a "                                                                                                                                                                                         
+                                                                                                                                                                                                                                      
+            else                                                                                                                                                                                                                      
+                                                                                                                                                                                                                                      
+                  echo "Direcorty already exists with name $a"                                                                                                                                                                        
+                                                                                                                                                                                                                                      
+           fi                                                                                                                                                                                                                         
+                                                                                                                                                                                                                                      
+                                                                                                                                                                                                                                      
+     fi                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                      
+             if [ $b == "delete" ] ; then                                                                                                                                                                                            
+                                                                                                                                                                                                                                      
+                if [ -d "$a" ] ; then                                                                                                                                                                                                 
+                                                                                                                                                                                                                                      
+                    rmdir "$a"                                                                                                                                                                                                        
+                                                                                                                                                                                                                                      
+                    echo "Directory $a removed successfully"                                                                                                                                                                          
+                                                                                                                                                                                                                                      
+                                                                                                                                                                                                                                      
+                 else                                                                                                                                                                                                                 
+                                                                                                                                                                                                                                      
+                     echo "No directory exists with name $a"                                                                                                                                                                          
+                                                                                                                                                                                                                                      
+              fi                                                                                                                                                                                                                      
+                                                                                                                                                                                                                                      
+          fi                                                                                                                                                                                                                          
+                                                                                                                                                                                                                                      
+  
+    else 
+
+       
+           echo "Please enter proper inputs"
+                                                                                                                                                                                                                                      
+     
+  fi

@@ -1,0 +1,10 @@
+#!/bin/sh                                                                                                                                                                                                                             
+                                                                                                                                                                                                                                      
+echo "Enter a number to display from zero to that number"                                                                                                                                                                             
+                                                                                                                                                                                                                                      
+read a                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                      
+for ((i=0;  i <= $a; ++i))                                                                                                                                                                                                            
+do                                                                                                                                                                                                                                    
+ echo $i                                                                                                                                                                                                                              
+done

@@ -1,0 +1,97 @@
+<loadTemplate templateSpecVersion="1.0" name="Billing_ScorecardDefault" idDelimiter="" targetModel="Billing_Scorecard">
+	<class condition="" ruleName="DBRule" name="DB">
+		<id>DB</id>
+		<properties>  
+		<property name="name">DB</property>
+		</properties>  
+		<associations>  
+		</associations>  
+		<lineageAssociations>  
+		</lineageAssociations>  
+	</class>
+	
+	<class condition="" ruleName="SourcePhysicalTable_Rule" name="Source">
+		<id>DB+'.'+SourcePhyTab</id>
+		<properties>  
+		<property name="name">SourcePhyTab</property>
+		</properties>  
+		<associations>  
+		<parent>DB</parent>
+		</associations>  
+		<lineageAssociations>
+		</lineageAssociations>  
+	</class>
+	
+	<class condition="" ruleName="SourcePhysicalFields_Rule" name="Source Physical Fields">
+		<id>DB+'.'+SourcePhyTab+'.'+SourcePhyAtt</id>
+		<properties>  
+		<property name="name">SourcePhyAtt</property>
+		<property name="Data Type">SourceDataType</property>
+		</properties>  
+		<associations>  
+		<parent>DB+'.'+SourcePhyTab</parent>
+		</associations>  
+		<lineageAssociations>
+		<lineageAssociation direction="to">
+			<linkExpression>TransformationRules</linkExpression>
+			<targetElement>DB+'.'+TargetPhyTab+'.'+TargetPhyAtt</targetElement>
+		</lineageAssociation>		
+		</lineageAssociations>  
+	</class>
+	
+	<class condition="" ruleName="SourceLogicalFields_Rule" name="Source Logical Fields">
+		<id>DB+'.'+SourcePhyTab+'.'+SourceLogAtt</id>
+		<properties>  
+		<property name="name">SourceLogAtt</property>
+		<property name="Data Type">SourceDataType</property>
+		</properties>  
+		<associations>  
+		<parent>DB+'.'+SourcePhyTab</parent>
+		</associations>  
+		<lineageAssociations>
+		<lineageAssociation direction="to">
+			<linkExpression>TransformationRules</linkExpression>
+			<targetElement>DB+'.'+TargetPhyTab+'.'+TargetLogAtt</targetElement>
+		</lineageAssociation>		
+		</lineageAssociations>  
+	</class>
+	
+	<class condition="" ruleName="TargetPhysicalTable_Rule" name="Target">
+		<id>DB+'.'+TargetPhyTab</id>
+		<properties>  
+		<property name="name">TargetPhyTab</property>
+		</properties>  
+		<associations>  
+		<parent>DB</parent>
+		</associations>  
+		<lineageAssociations> 
+		</lineageAssociations>  
+	</class>
+	
+	<class condition="" ruleName="TargetPhysicalFields_Rule" name="Target Physical Fields">
+		<id>DB+'.'+TargetPhyTab+'.'+TargetPhyAtt</id>
+		<properties>  
+		<property name="name">TargetPhyAtt</property>
+		<property name="Data Type">SourceDataType</property>
+		</properties>  
+		<associations>  
+		<parent>DB+'.'+TargetPhyTab</parent>
+		</associations>  
+		<lineageAssociations>  
+		</lineageAssociations>  
+	</class>
+	
+	<class condition="" ruleName="TargetLogicalFields_Rule" name="Target Logical Fields">
+		<id>DB+'.'+TargetPhyTab+'.'+TargetLogAtt</id>
+		<properties>  
+		<property name="name">TargetLogAtt</property>
+		<property name="Data Type">TargetDataType+'.'+TargetLength</property>
+		<property name="infa_description">Definitions</property>
+		</properties>  
+		<associations>  
+		<parent>DB+'.'+TargetPhyTab</parent>
+		</associations>  
+		<lineageAssociations>  
+		</lineageAssociations>  
+	</class>
+</loadTemplate>
