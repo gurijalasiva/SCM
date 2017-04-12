@@ -1,13 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<!--
-    Document   : test1.xml.xml
-    Created on : February 5, 2010, 9:00 AM
-    Author     : jason
-    Description:
-        Purpose of the document follows.
--->
-
 <root>
   <people>
     <person id="0">
